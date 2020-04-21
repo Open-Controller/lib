@@ -1,0 +1,27 @@
+{
+  "name": "remote-lib",
+  "version": "0.0.1",
+  "description": "Library for remotes.",
+  "main": "dist/index.js",
+  "author": "Peter PJT <pjtsignups@gmail.com>",
+  "license": "GPL-3.0-only",
+  "private": false,
+  "scripts": {
+    "dev": "tsnd --respawn src/index.ts",
+    "commit": "git-cz"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.1.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "commitizen": "^4.0.4",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
