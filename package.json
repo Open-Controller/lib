@@ -1,13 +1,13 @@
 {
   "name": "remote-lib",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Library for remotes.",
   "main": "dist/index.js",
   "author": "Peter PJT <pjtsignups@gmail.com>",
   "license": "GPL-3.0-only",
   "private": false,
   "scripts": {
-    "dev": "tsnd --respawn src/index.ts",
+    "sample": "tsnd --respawn samples/remote/index.ts",
     "commit": "git-cz"
   },
   "devDependencies": {
