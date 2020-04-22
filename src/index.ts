@@ -1,6 +1,8 @@
 import { Device } from "./ActionClient/Device";
 import { HttpAction } from "./Action/HttpAction";
 import { Macro } from "./Action/Macro";
+import { Remote } from "./Remote/Remote";
+import { HLayout } from "./Remote/LayoutGroup/HLayout";
 
 const main = async ()=>{
     const TVBase = "http://10.0.2.105:1234"
@@ -35,13 +37,30 @@ const main = async ()=>{
         }),
     ]})
 
-    const fios = new Device({name:"Fios",actions:[
-       new Macro({name:"on",actions:[
-           TV.getAction("on"),
-           STB.getAction("on")
-       ]})
-    ]})
-    console.log(await fios.run("on"))
+    const fios = new Remote({name:"Fios",layout:{
+        top:{
+            left:null,
+            center:null,
+            right:new HLayout([
+                new Macro({name:"on",actions:[
+                    TV.getAction("on"),
+                    STB.getAction("on")
+                ]})
+            ])
+        },
+        middle:{
+            left:null,
+            center:null,
+            right:null
+        },
+        bottom:{
+            left:null,
+            center:null,
+            right:null
+        }
+    }})
+
+    console.log(fios)
 }
 
 main()
