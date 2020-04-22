@@ -9,6 +9,9 @@ export class Device implements ActionClient{
         this.actions = actions
     }
     async run(action:string):Promise<ActionSuccess>{
-        return await this.actions.find(a=>a.name===action).run()
+        return await this.getAction(action).run()
+    }
+    getAction(name:string):Action{
+        return this.actions.find(a=>a.name===name)
     }
 }
