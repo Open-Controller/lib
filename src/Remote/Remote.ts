@@ -1,6 +1,11 @@
 import { LayoutGroup } from "./LayoutGroup/LayoutGroup";
 
 interface RemoteLayout {
+    upper:{
+        left:LayoutGroup,
+        center:LayoutGroup,
+        right:LayoutGroup
+    },
     top:{
         left:LayoutGroup,
         center:LayoutGroup,

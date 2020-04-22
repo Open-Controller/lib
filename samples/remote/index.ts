@@ -34,7 +34,7 @@ const main = async ()=>{
     ]})
 
     const fios = new Remote({name:"Fios",layout:{
-        top:{
+        upper:{
             left:null,
             center:null,
             right:new HLayout([
@@ -43,6 +43,11 @@ const main = async ()=>{
                     STB.getAction("on")
                 ]})
             ])
+        },
+        top:{
+            left:null,
+            center:null,
+            right:null
         },
         middle:{
             left:null,

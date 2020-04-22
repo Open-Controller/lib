@@ -1,6 +1,6 @@
 {
   "name": "remote-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Library for remotes.",
   "main": "dist/index.js",
   "author": "Peter PJT <pjtsignups@gmail.com>",
