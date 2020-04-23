@@ -1,9 +1,9 @@
 import { LayoutGroup } from "./LayoutGroup/LayoutGroup";
 
 interface RemoteLayoutSection {
-    left:LayoutGroup,
-    center:LayoutGroup,
-    right:LayoutGroup
+    left:LayoutGroup|null|undefined,
+    center:LayoutGroup|null|undefined,
+    right:LayoutGroup|null|undefined
 }
 
 export class Remote {
