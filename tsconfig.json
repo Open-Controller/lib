@@ -7,5 +7,5 @@
       "sourceMap": true,
       "outDir": "dist"
     },
-    "lib": ["esnext"]
+    "lib": ["esnext","dom"]
   }

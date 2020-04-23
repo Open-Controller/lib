@@ -8,6 +8,7 @@
   "private": false,
   "scripts": {
     "sample": "tsnd --respawn samples/remote/index.ts",
+    "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom",
     "commit": "git-cz"
   },
   "devDependencies": {
