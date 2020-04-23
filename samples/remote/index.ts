@@ -33,8 +33,8 @@ const main = async ()=>{
         }),
     ]})
 
-    const fios = new Remote({name:"Fios",layout:{
-        upper:{
+    const fios = new Remote({name:"Fios",layout:[
+        {
             left:null,
             center:null,
             right:new HLayout([
@@ -44,22 +44,22 @@ const main = async ()=>{
                 ]})
             ])
         },
-        top:{
+        {
             left:null,
             center:null,
             right:null
         },
-        middle:{
+        {
             left:null,
             center:null,
             right:null
         },
-        bottom:{
+        {
             left:null,
             center:null,
             right:null
         }
-    }})
+    ]})
 
     console.log(fios)
 }
