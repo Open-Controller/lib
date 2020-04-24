@@ -34,31 +34,16 @@ const main = async ()=>{
     ]})
 
     const fios = new Remote({name:"Fios",layout:[
-        {
-            left:null,
-            center:null,
-            right:new HLayout([
+        [
+            null,
+            null,
+            new HLayout([
                 new Macro({name:"on",actions:[
                     TV.getAction("on"),
                     STB.getAction("on")
                 ]})
             ])
-        },
-        {
-            left:null,
-            center:null,
-            right:null
-        },
-        {
-            left:null,
-            center:null,
-            right:null
-        },
-        {
-            left:null,
-            center:null,
-            right:null
-        }
+        ]
     ]})
 
     console.log(fios)
