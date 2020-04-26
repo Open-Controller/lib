@@ -24,6 +24,9 @@ export class TelnetAction implements Action {
             command: "send",
             data: `${this.command}\r\n`
         }))
+        this.ws.send(JSON.stringify({
+            command: "close"
+        }))
         return {successful:true}
     }
 }
