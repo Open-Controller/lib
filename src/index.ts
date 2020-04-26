@@ -1,3 +1,5 @@
 export * from "./Action"
 export * from "./ActionClient"
 export * from "./Remote"
+export * from "./Room"
+export * from "./House"
