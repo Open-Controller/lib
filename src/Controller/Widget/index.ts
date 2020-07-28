@@ -1,5 +1,5 @@
 export * from "./ArrowLayout"
 export * from "./GridLayout"
 export * from "./HLayout"
-export * from "./LayoutGroup"
+export * from "./Widget"
 export * from "./VLayout"

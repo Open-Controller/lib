@@ -1,4 +1,8 @@
-import { Device,HttpAction,Macro,Remote,HLayout } from "../../src";
+import { Device,HttpAction,Macro,Controller,HLayout, VLayout, createWidget as c } from "../../src";
+import { Button } from "../../src/Controller/Widget/Button";
+import htm from 'htm'
+import { Blank } from "../../src/Controller/Widget/Blank";
+const xml = htm.bind(c);
 
 const main = async ()=>{
     const TVBase = "http://10.0.2.105:1234"
@@ -33,20 +37,50 @@ const main = async ()=>{
         }),
     ]})
 
-    const fios = new Remote({name:"Fios",layout:[
-        [
-            null,
-            null,
-            new HLayout([
-                new Macro({name:"on",actions:[
-                    TV.getAction("on"),
-                    STB.getAction("on")
-                ]})
-            ])
-        ]
+    // const fios = new Controller({name:"Fios",layout:[
+    //     new VLayout([
+    //         null,
+    //         null,
+    //         new HLayout([
+    //             new Macro({name:"on",actions:[
+    //                 TV.getAction("on"),
+    //                 STB.getAction("on")
+    //             ]})
+    //         ])
+    //     ])
+    // ]})
+
+    const fios2 = new Controller({name:"Fios",layout:[
+        c(VLayout,null,
+            c(Blank),
+            c(Blank),
+            c(HLayout,null,
+                c(Button,{
+                    action: new Macro({name:"on",actions:[
+                        TV.getAction("on"),
+                        STB.getAction("on")
+                    ]})
+                })
+            )
+        )
     ]})
 
-    console.log(fios)
+    const fios3 = new Controller({name:"Fios",layout:[
+        xml`
+            <${VLayout}>
+                <${Blank}/>
+                <${Blank}/>
+                <${HLayout}>
+                    <${Button} action=${new Macro({name:"on",actions:[
+                        TV.getAction("on"),
+                        STB.getAction("on")
+                    ]})}/>
+                </${HLayout}>
+            </${VLayout}>
+        `
+    ]})
+
+    console.log(JSON.stringify(fios3,null,2))
 }
 
 main()

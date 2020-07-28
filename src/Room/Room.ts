@@ -1,10 +1,10 @@
-import { Remote } from "../Remote";
+import { Controller } from "../Controller";
 
 export class Room {
     name:string
-    remotes:Remote[]
-    constructor({name,remotes}:{name:string,remotes:Remote[]}){
+    controllers:Controller[]
+    constructor({name,controllers}:{name:string,controllers:Controller[]}){
         this.name = name
-        this.remotes = remotes
+        this.controllers = controllers
     }
 }

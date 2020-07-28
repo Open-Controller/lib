@@ -4,6 +4,5 @@ export interface ActionSuccess {
 
 export interface Action {
     name:string
-    icon?:string
     run():Promise<ActionSuccess>
 }
