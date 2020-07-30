@@ -1,6 +1,6 @@
 import { Widget, WidgetConstructor } from "./Widget"
 
-export const ArrowLayout:WidgetConstructor = class implements Widget {
+export class ArrowLayout implements Widget {
     left:Widget
     right:Widget
     center:Widget
@@ -15,3 +15,5 @@ export const ArrowLayout:WidgetConstructor = class implements Widget {
         this.bottom = children[4]
     }
 }
+
+const check:WidgetConstructor<{}> = ArrowLayout

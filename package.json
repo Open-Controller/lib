@@ -14,11 +14,11 @@
   "devDependencies": {
     "cz-conventional-changelog": "3.1.0",
     "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "commitizen": "^4.0.4",
+    "htm": "^3.0.4"
   },
   "dependencies": {
-    "commitizen": "^4.0.4",
-    "htm": "^3.0.4",
     "isomorphic-fetch": "^2.2.1"
   },
   "config": {

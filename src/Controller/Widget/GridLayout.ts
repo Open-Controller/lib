@@ -1,7 +1,6 @@
 import { Widget, WidgetConstructor } from "./Widget"
-import { Action } from "../../Action/Action"
 
-export const GridLayout:WidgetConstructor = class implements Widget {
+export class GridLayout implements Widget {
     children:Widget[]
     height:number;
     width:number;
@@ -12,3 +11,5 @@ export const GridLayout:WidgetConstructor = class implements Widget {
         this.width = width
     }
 }
+
+const check:WidgetConstructor<{height:number,width:number}> = GridLayout
