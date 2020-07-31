@@ -7,4 +7,7 @@ export class House {
         this.name = name
         this.rooms = rooms
     }
+    static fromJSON(json:any){
+        return new House({name:json.name,rooms:json.rooms.map(Room.fromJSON)})
+    }
 }
