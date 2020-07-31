@@ -8,7 +8,7 @@ export class DelayAction implements Action {
         this.time = time
     }
     async run():Promise<ActionSuccess>{
-        await (async () => new Promise(resolve => setTimeout(resolve, this.time)))()
+        await new Promise(r => setTimeout(r, this.time));
         return {successful:true}
     }
 }
