@@ -34,4 +34,14 @@ export class TelnetAction implements Action {
         })),500)
         return {successful:true}
     }
+    toJSON() {
+        return {
+            wsAddress:this.wsAddress,
+            host:this.host,
+            port:this.port,
+            name:this.name,
+            command:this.command,
+            variant:this.variant
+        }
+    }
 }
