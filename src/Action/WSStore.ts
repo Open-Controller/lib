@@ -1,0 +1,1 @@
+export const WSStore:Map<string,WebSocket> = new Map();

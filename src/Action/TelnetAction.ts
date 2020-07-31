@@ -1,17 +1,23 @@
 import {Action,ActionSuccess} from "./Action"
+import { WSStore } from "./WSStore"
 export class TelnetAction implements Action {
+    wsAddress:string
     ws:WebSocket
     host:string
     port:number
     name:string
     command:string
     variant="TelnetAction"
-    constructor({name,ws,host,port,command}:{name:string,ws:WebSocket,host:string,port:number,command:string}){
+    constructor({name,wsAddress,host,port,command}:{name:string,wsAddress:string,host:string,port:number,command:string}){
         this.name = name
-        this.ws = ws
         this.host = host
         this.port = port
         this.command = command
+        this.wsAddress = wsAddress
+        if (!WSStore.has(wsAddress)){
+            WSStore.set(wsAddress,new WebSocket(wsAddress))
+        }
+        this.ws = WSStore.get(wsAddress)
     }
     async run():Promise<ActionSuccess>{
         this.ws.send(JSON.stringify({

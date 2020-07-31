@@ -17,9 +17,8 @@ export class Action {
                 return new HttpAction({name:json.name,method:json.method,base:json.base,path:json.path});
             case "Macro": 
                 return new Macro({name:json.name,actions:json.actions.map(Action.fromJSON)});
-            // FIXME: readd
-            // case "TelnetAction": 
-            //     return new TelnetAction({name:json.name,});
+            case "TelnetAction": 
+                return new TelnetAction({name:json.name,wsAddress:json.wsAddress,host:json.host,port:json.port,command:json.command});
         }
     }
 }
