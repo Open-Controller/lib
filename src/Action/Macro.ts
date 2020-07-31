@@ -3,6 +3,7 @@ import { Action, ActionSuccess } from "./Action";
 export class Macro implements Action {
     actions:Action[]
     name:string
+    variant="Macro"
     constructor({name,actions}:{name:string,actions:Action[]}){
         this.actions = actions
         this.name = name

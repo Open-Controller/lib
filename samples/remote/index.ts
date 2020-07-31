@@ -1,4 +1,4 @@
-import { Device,HttpAction,Macro,Controller,HLayout, VLayout, createWidget as c } from "../../src";
+import { Device,HttpAction,Macro,Controller,HLayout, VLayout, createWidget as c, Widget } from "../../src";
 import { Button } from "../../src/Controller/Widget/Button";
 import htm from 'htm'
 import { Blank } from "../../src/Controller/Widget/Blank";
@@ -77,7 +77,7 @@ const main = async ()=>{
                     ]})}/>
                 </${HLayout}>
             </${VLayout}>
-        `
+        ` as Widget
     ]})
 
     console.log(JSON.stringify(fios3,null,2))

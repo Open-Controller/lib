@@ -5,6 +5,7 @@ export class TelnetAction implements Action {
     port:number
     name:string
     command:string
+    variant="TelnetAction"
     constructor({name,ws,host,port,command}:{name:string,ws:WebSocket,host:string,port:number,command:string}){
         this.name = name
         this.ws = ws

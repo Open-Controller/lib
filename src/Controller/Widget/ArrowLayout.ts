@@ -7,12 +7,18 @@ export class ArrowLayout implements Widget {
     top:Widget
     bottom:Widget
     variant="ArrowLayout"
-    constructor(children:Widget[]){
-        this.left = children[0]
-        this.right = children[1]
-        this.center = children[2]
-        this.top = children[3]
-        this.bottom = children[4]
+    constructor({left,right,top,bottom,center}:{
+        left:Widget
+        right:Widget
+        center:Widget
+        top:Widget
+        bottom:Widget
+    }){
+        this.left = left
+        this.right = right
+        this.center = center
+        this.top = top
+        this.bottom = bottom
     }
 }
 
