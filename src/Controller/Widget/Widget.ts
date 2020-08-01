@@ -12,7 +12,7 @@ export interface Widget {
 export class Widget {
     static fromJSON(json:any){
         if (json.variant == "ArrowLayout") 
-            return new ArrowLayout({left:json.left,right:json.right,top:json.top,bottom:json.bottom,center:json.center});
+            return new ArrowLayout({left:Widget.fromJSON(json.left),right:Widget.fromJSON(json.right),top:Widget.fromJSON(json.top),bottom:Widget.fromJSON(json.bottom),center:Widget.fromJSON(json.center)});
         if (json.variant == "Blank")
             return new Blank();
         if (json.variant == "Button")
