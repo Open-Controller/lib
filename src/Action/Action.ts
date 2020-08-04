@@ -1,4 +1,4 @@
-import { HttpAction, Macro, TelnetAction, DelayAction } from ".";
+import { HttpAction, Macro, TelnetAction, DelayAction, TCPAction } from ".";
 
 export interface ActionSuccess {
     successful:boolean
@@ -21,6 +21,8 @@ export class Action {
                 return new TelnetAction({name:json.name,wsAddress:json.wsAddress,host:json.host,port:json.port,command:json.command});
             case "DelayAction":
                 return new DelayAction({name:json.name,time:json.time})
+            case "TCPAction": 
+                return new TCPAction({name:json.name,host:json.host,port:json.port,command:json.command});
         }
     }
 }

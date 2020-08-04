@@ -16,7 +16,8 @@
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3",
     "commitizen": "^4.0.4",
-    "htm": "^3.0.4"
+    "htm": "^3.0.4",
+    "net":"^1.0.2"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
@@ -25,5 +26,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "react-native":{
+    "net":"react-native-tcp-socket"
   }
 }
