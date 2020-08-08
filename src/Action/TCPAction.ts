@@ -14,10 +14,19 @@ export class TCPAction implements Action {
     }
     async run():Promise<ActionSuccess>{
         var client = net.createConnection({ port: this.port, host:this.host });
+        client.on("error", (err)=> {
+            console.log("TCP ERR",err)
+            client.destroy()
+        });
         client.on("connect", ()=> {
             client.write(`${this.command}\r\n`);
         });
-        setTimeout(()=>client.destroy(),500)
+        client.on("data", (data)=> {
+            client.destroy()
+        });
+        setTimeout(()=>{
+            try{client.destroy()}catch(e){}
+        },500)
         return {successful:true}
     }
     toJSON() {
