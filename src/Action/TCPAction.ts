@@ -25,8 +25,8 @@ export class TCPAction implements Action {
             client.destroy()
         });
         setTimeout(()=>{
-            try{client.destroy()}catch(e){}
-        },500)
+            client.destroy()
+        },200)
         return {successful:true}
     }
     toJSON() {
