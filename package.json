@@ -1,5 +1,5 @@
 {
-  "name": "control-lib",
+  "name": "opencontroller-lib",
   "version": "0.5.1",
   "description": "Library for remotes.",
   "main": "dist/index.js",
