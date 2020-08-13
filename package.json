@@ -6,6 +6,7 @@
   "author": "Peter PJT <pjtsignups@gmail.com>",
   "license": "GPL-3.0-only",
   "private": false,
+  "repository": "git://github.com/Open-Controller/opencontroller-lib.git",
   "scripts": {
     "sample": "tsnd --respawn samples/remote/index.ts",
     "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom -d",
@@ -30,5 +31,5 @@
   "react-native":{
     "net":"react-native-tcp-socket"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@Open-Controller" }
 }
