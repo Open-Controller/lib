@@ -13,12 +13,12 @@
     "commit": "git-cz"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "3.1.0",
-    "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.8.3",
-    "commitizen": "^4.0.4",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "3.2.0",
     "htm": "^3.0.4",
-    "net":"^1.0.2"
+    "net": "^1.0.2",
+    "ts-node-dev": "^1.0.0-pre.56",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
@@ -28,8 +28,10 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "react-native":{
-    "net":"react-native-tcp-socket"
+  "react-native": {
+    "net": "react-native-tcp-socket"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@Open-Controller" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@Open-Controller"
+  }
 }
