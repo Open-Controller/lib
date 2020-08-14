@@ -26,7 +26,7 @@ export class Widget {
         if (json.variant == "VLayout")
             return new VLayout(json.children.map(Widget.fromJSON));
         if (json.variant == "DynamicText")
-            return new DynamicText({text:DynamicValue.fromJSON(json.text)})        
+            return new DynamicText({text:DynamicValue.fromJSON(json.text),key:json.key})        
     }
 }
 

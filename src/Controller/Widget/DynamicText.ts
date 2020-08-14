@@ -3,9 +3,11 @@ import { DynamicValue } from "../../DynamicValue"
 
 export class DynamicText implements Widget {
     text:DynamicValue<string|number>
+    key:string
     variant="DynamicText"
-    constructor({text}:{text:DynamicValue<string|number>}){
+    constructor({text,key}:{text:DynamicValue<string|number>,key:string}){
         this.text = text
+        this.key = key
     }
 }
 
