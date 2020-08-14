@@ -1,5 +1,7 @@
 import { ArrowLayout, Blank, Button, GridLayout, HLayout, VLayout } from "../";
 import { Action } from "../../Action";
+import { DynamicText } from "./DynamicText";
+import { DynamicValue } from "../../DynamicValue";
 
 export interface WidgetConstructor<T extends object> {
     new (attributes?:T,children?:Widget[]):Widget
@@ -23,6 +25,8 @@ export class Widget {
             return new HLayout(json.children.map(Widget.fromJSON));
         if (json.variant == "VLayout")
             return new VLayout(json.children.map(Widget.fromJSON));
+        if (json.variant == "DynamicText")
+            return new DynamicText({text:DynamicValue.fromJSON(json.text),key:json.key})        
     }
 }
 
