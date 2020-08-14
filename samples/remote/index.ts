@@ -2,6 +2,7 @@ import { Device,HttpAction,Macro,Controller,HLayout, VLayout, createWidget as c,
 import { Button } from "../../src/Controller/Widget/Button";
 import htm from 'htm'
 import { Blank } from "../../src/Controller/Widget/Blank";
+import { DateValue, DynamicValue } from "../../src/DynamicValue";
 const xml = htm.bind(c);
 
 const main = async ()=>{
@@ -80,7 +81,10 @@ const main = async ()=>{
         ` as Widget
     ]})
 
-    console.log(JSON.stringify(fios3,null,2))
+    // console.log(JSON.stringify(fios3,null,2))
+    const date = DynamicValue.fromJSON(JSON.parse(JSON.stringify(new DateValue())))
+    const unsubscribe = date.onValue(console.log)
+    setTimeout(()=>{unsubscribe();date.destroy()},5000)
 }
 
 main()
