@@ -6,6 +6,9 @@ export class HLayout implements Widget {
     constructor(children:Widget[]){
         this.children = children
     }
+    static fromJSON(json: { children: any[]; }){
+        return new HLayout(json.children.map(Widget.fromJSON));
+    }
 }
 
 const check:WidgetConstructor<{}> = HLayout

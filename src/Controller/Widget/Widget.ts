@@ -14,19 +14,19 @@ export interface Widget {
 export class Widget {
     static fromJSON(json:any){
         if (json.variant == "ArrowLayout") 
-            return new ArrowLayout({left:Widget.fromJSON(json.left),right:Widget.fromJSON(json.right),top:Widget.fromJSON(json.top),bottom:Widget.fromJSON(json.bottom),center:Widget.fromJSON(json.center)});
+            return ArrowLayout.fromJSON(json)
         if (json.variant == "Blank")
-            return new Blank();
+            return Blank.fromJSON(json)
         if (json.variant == "Button")
-            return new Button({action:Action.fromJSON(json.action),icon:json.icon});
+            return Button.fromJSON(json)
         if (json.variant == "GridLayout")
-            return new GridLayout({height:json.height,width:json.width},json.children.map(Widget.fromJSON));
+            return GridLayout.fromJSON(json)
         if (json.variant == "HLayout")
-            return new HLayout(json.children.map(Widget.fromJSON));
+            return HLayout.fromJSON(json)
         if (json.variant == "VLayout")
-            return new VLayout(json.children.map(Widget.fromJSON));
+            return VLayout.fromJSON(json)
         if (json.variant == "DynamicText")
-            return new DynamicText({text:DynamicValue.fromJSON(json.text),key:json.key})        
+            return DynamicText.fromJSON(json)        
     }
 }
 

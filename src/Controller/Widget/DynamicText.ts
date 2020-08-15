@@ -9,6 +9,9 @@ export class DynamicText implements Widget {
         this.text = text
         this.key = key
     }
+    static fromJSON(json: { text: any; key: string }){
+        return new DynamicText({text:DynamicValue.fromJSON(json.text),key:json.key})
+    }
 }
 
 const check:WidgetConstructor<{text:DynamicValue<string>}> = DynamicText

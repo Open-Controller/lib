@@ -20,6 +20,9 @@ export class ArrowLayout implements Widget {
         this.top = top
         this.bottom = bottom
     }
+    static fromJSON(json: { left: any; right: any; top: any; bottom: any; center: any }){
+        return new ArrowLayout({left:Widget.fromJSON(json.left),right:Widget.fromJSON(json.right),top:Widget.fromJSON(json.top),bottom:Widget.fromJSON(json.bottom),center:Widget.fromJSON(json.center)});
+    }
 }
 
 const check:WidgetConstructor<{}> = ArrowLayout
