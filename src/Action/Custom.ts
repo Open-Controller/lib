@@ -1,5 +1,6 @@
 import { Action, ActionSuccess } from "./Action";
 
+/** @deprecated cannot be converted into JSON */
 export class Custom implements Action {
     action:Function
     name:string

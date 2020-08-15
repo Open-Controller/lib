@@ -1,5 +1,8 @@
 import {Action,ActionSuccess} from "./Action"
 import { WSStore } from "./WSStore"
+/**
+ * @deprecated use TCPAction instead, because its sends the request directly from the device
+ */
 export class TelnetAction implements Action {
     wsAddress:string
     ws:WebSocket
