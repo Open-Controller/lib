@@ -1,4 +1,4 @@
-import { DateValue, ParsedValue } from ".";
+import { DateValue, ParsedValue, TextValue } from ".";
 
 export type Listener<T> = (value:T)=>void
 export type Unsubscriber = ()=>void
@@ -18,6 +18,8 @@ export class DynamicValue<T> {
                 return DateValue.fromJSON(json)
             case "ParsedValue":
                 return ParsedValue.fromJSON(json)
+            case "TextValue":
+                return TextValue.fromJSON(json)
         }
     }
 }
