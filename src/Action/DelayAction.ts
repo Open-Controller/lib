@@ -11,4 +11,7 @@ export class DelayAction implements Action {
         await new Promise(r => setTimeout(r, this.time));
         return {successful:true}
     }
+    static fromJSON(json: { name: string; time: number }){
+        return new DelayAction({name:json.name,time:json.time})
+    }
 }

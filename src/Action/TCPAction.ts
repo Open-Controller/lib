@@ -38,4 +38,7 @@ export class TCPAction implements Action {
             variant:this.variant
         }
     }
+    static fromJSON(json: { name: string; host: string; port: number; command: string }){
+        return new TCPAction({name:json.name,host:json.host,port:json.port,command:json.command});
+    }
 }

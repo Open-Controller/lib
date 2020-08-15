@@ -44,4 +44,7 @@ export class TelnetAction implements Action {
             variant:this.variant
         }
     }
+    static fromJSON(json: { name: string; wsAddress: string; host: string; port: number; command: string }){
+        return new TelnetAction({name:json.name,wsAddress:json.wsAddress,host:json.host,port:json.port,command:json.command})
+    }
 }

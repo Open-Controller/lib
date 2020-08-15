@@ -23,4 +23,7 @@ export class DateValue implements DynamicValue<string> {
             variant:this.variant
         }
     }
+    static fromJSON(_:any){
+        return new DateValue()
+    }
 }

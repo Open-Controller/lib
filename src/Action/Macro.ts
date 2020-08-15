@@ -20,4 +20,7 @@ export class Macro implements Action {
             successful:true
         }
     }
+    static fromJSON(json:{name:string,actions:any[]}){
+        return new Macro({name:json.name,actions:json.actions.map(Action.fromJSON)})
+    }
 }

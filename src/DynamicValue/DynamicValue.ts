@@ -15,9 +15,9 @@ export class DynamicValue<T> {
     static fromJSON(json:any){
         switch (json.variant){
             case "DateValue":
-                return new DateValue()
+                return DateValue.fromJSON(json)
             case "ParsedValue":
-                return new ParsedValue({input:DynamicValue.fromJSON(json.input)})
+                return ParsedValue.fromJSON(json)
         }
     }
 }

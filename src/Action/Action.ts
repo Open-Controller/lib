@@ -14,15 +14,15 @@ export class Action {
     static fromJSON(json:any){
         switch (json.variant){
             case "HttpAction": 
-                return new HttpAction({name:json.name,method:json.method,base:json.base,path:json.path});
+                return HttpAction.fromJSON(json);
             case "Macro": 
-                return new Macro({name:json.name,actions:json.actions.map(Action.fromJSON)});
+                return Macro.fromJSON(json);
             case "TelnetAction": 
-                return new TelnetAction({name:json.name,wsAddress:json.wsAddress,host:json.host,port:json.port,command:json.command});
+                return TelnetAction.fromJSON(json);
             case "DelayAction":
-                return new DelayAction({name:json.name,time:json.time})
+                return DelayAction.fromJSON(json)
             case "TCPAction": 
-                return new TCPAction({name:json.name,host:json.host,port:json.port,command:json.command});
+                return TCPAction.fromJSON(json)
         }
     }
 }

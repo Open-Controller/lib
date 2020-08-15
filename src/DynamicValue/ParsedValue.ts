@@ -20,4 +20,7 @@ export class ParsedValue implements DynamicValue<unknown> {
             this.listeners = this.listeners.filter(l=>l!==listener)
         }
     }
+    static fromJSON(json: { input: any }){
+        return new ParsedValue({input:DynamicValue.fromJSON(json.input)})
+    }
 }

@@ -19,4 +19,7 @@ export class HttpAction implements Action {
         const response = await fetch(this.url,{method:this.method})
         return {successful:response.ok}
     }
+    static fromJSON(json:{name:string,method:Method,base:string,path:string}){
+        return new HttpAction({name:json.name,method:json.method,base:json.base,path:json.path})
+    }
 }
