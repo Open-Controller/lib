@@ -11,13 +11,14 @@
     "sample": "tsnd --respawn samples/remote/index.ts",
     "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom -d",
     "commit": "git-cz",
-    "test": "mocha -r ts-node/register src/**/*.test.ts"
+    "test": "mocha -r ts-node/register \"src/**/*.test.ts\""
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/mocha": "^8.0.2",
     "chai": "^4.2.0",
+    "chai-exclude": "^2.0.2",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "3.2.0",
     "htm": "^3.0.4",

@@ -1,11 +1,16 @@
-import { expect } from "chai"
+import { expect,use } from "chai"
+import chaiExclude from 'chai-exclude';
 
-export const jsonTest = <T extends {new(...args:any):InstanceType<T>;fromJSON(json:any):InstanceType<T>}>(constructor:T,args:ConstructorParameters<T>)=>{
+use(chaiExclude);
+export const jsonTest = <
+        T extends {new(...args:any):InstanceType<T>;
+        fromJSON(json:any):InstanceType<T>}
+    >(constructor:T,args:ConstructorParameters<T>,exclude?:string|string[])=>{
     return describe("#fromJSON()",()=>{
         it("should convert to the same thing",()=>{
             const object = new constructor(...args as any[])
             const clonedObject = constructor.fromJSON(JSON.parse(JSON.stringify(object)))
-            expect(clonedObject).to.deep.equal(object)
+            expect(clonedObject).excludingEvery(exclude).to.deep.equal(object)
         })
     })
 }
