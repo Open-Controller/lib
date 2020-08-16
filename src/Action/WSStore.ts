@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 /**
  * @deprecated use TCPAction instead, because its sends the request directly from the device
  */

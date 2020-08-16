@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { Action, ActionSuccess } from "./Action";
 
 /** @deprecated cannot be converted into JSON */

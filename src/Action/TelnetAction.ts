@@ -1,5 +1,8 @@
+/* istanbul ignore file */
+
 import {Action,ActionSuccess} from "./Action"
 import { WSStore } from "./WSStore"
+
 /**
  * @deprecated use TCPAction instead, because its sends the request directly from the device
  */
