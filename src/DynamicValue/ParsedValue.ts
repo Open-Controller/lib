@@ -3,24 +3,18 @@ import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 export class ParsedValue implements DynamicValue<unknown> {
     variant="ParsedValue"
     input:DynamicValue<string>
-    unsubscribe:Unsubscriber
-    listeners:Listener<unknown>[]=[]
-    constructor({input}:{input:DynamicValue<string>}){
+    constructor(input:DynamicValue<string>){
         this.input = input
-        this.unsubscribe = input.onValue(val=> {
-            this.listeners.forEach(l=>l(JSON.parse(val)))
+    }
+    onValue(listener:Listener<number|string|object>):Unsubscriber{
+        const unsubscribe = this.input.onValue(val=> {
+            listener(JSON.parse(val))
         })
-    }
-    destroy(){
-        this.unsubscribe()
-    }
-    onValue(listener:Listener<number>):Unsubscriber{
-        this.listeners.push(listener)
         return ()=> {
-            this.listeners = this.listeners.filter(l=>l!==listener)
+            unsubscribe()
         }
     }
     static fromJSON(json: { input: any }){
-        return new ParsedValue({input:DynamicValue.fromJSON(json.input)})
+        return new ParsedValue(DynamicValue.fromJSON(json.input))
     }
 }

@@ -2,13 +2,9 @@ import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 
 export class TextValue implements DynamicValue<string> {
     variant="TextValue"
-    listeners:Listener<string>[]=[]
     text:string
     constructor(text:string){
         this.text = text
-    }
-    destroy(){
-
     }
     onValue(listener:Listener<string>):Unsubscriber{
         listener(this.text)
