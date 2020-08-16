@@ -2,7 +2,7 @@ import { describe,it } from "mocha"
 import { expect } from "chai"
 import { jsonTest } from "../utils/jsonTest"
 import { TCPAction } from "./TCPAction"
-import net from "net"
+import * as net from "net"
 
 describe("TCPAction",()=>{
     let server:net.Server;
