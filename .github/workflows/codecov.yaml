@@ -18,7 +18,6 @@ jobs:
         node-version: 14
     - run: yarn
     - run: yarn test
-    - uses: actions/checkout@master
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
