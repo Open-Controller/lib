@@ -17,6 +17,7 @@ export class Action {
                 return HttpAction.fromJSON(json);
             case "Macro": 
                 return Macro.fromJSON(json);
+            /* istanbul ignore next */
             case "TelnetAction": 
                 return TelnetAction.fromJSON(json);
             case "DelayAction":
