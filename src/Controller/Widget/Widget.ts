@@ -26,7 +26,8 @@ export class Widget {
         if (json.variant == "VLayout")
             return VLayout.fromJSON(json)
         if (json.variant == "DynamicText")
-            return DynamicText.fromJSON(json)        
+            return DynamicText.fromJSON(json)     
+        return null   
     }
 }
 
@@ -34,4 +35,5 @@ export const createWidget = <T extends WidgetConstructor<any>>(widget:T,attribut
     if (attributes && children.length) return new widget(attributes,children)
     else if (attributes) return new widget(attributes)
     else if (children.length) return new widget(children)
+    else return null  
 }

@@ -31,6 +31,7 @@ describe("Widget",()=>{
             ]))
             run(new HLayout([new Blank()]))
             run(new VLayout([new Blank()]))
+            expect(Widget.fromJSON({variant:"NonExistent"})).to.deep.equal(null)
         })
     })
 })
@@ -54,5 +55,6 @@ describe("createWidget()",()=>{
             top:new Blank(),
             bottom:new Blank(),
         }))
+        expect(createWidget(null)).to.equal(null)
     })
 })
