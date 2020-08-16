@@ -8,24 +8,24 @@ export interface WidgetConstructor<T extends object> {
 }
 
 export interface Widget {
-    variant:string;
+    __variant__:string;
 }
 
 export class Widget {
     static fromJSON(json:any){
-        if (json.variant == "ArrowLayout") 
+        if (json.__variant__ == "ArrowLayout") 
             return ArrowLayout.fromJSON(json)
-        if (json.variant == "Blank")
+        if (json.__variant__ == "Blank")
             return Blank.fromJSON(json)
-        if (json.variant == "Button")
+        if (json.__variant__ == "Button")
             return Button.fromJSON(json)
-        if (json.variant == "GridLayout")
+        if (json.__variant__ == "GridLayout")
             return GridLayout.fromJSON(json)
-        if (json.variant == "HLayout")
+        if (json.__variant__ == "HLayout")
             return HLayout.fromJSON(json)
-        if (json.variant == "VLayout")
+        if (json.__variant__ == "VLayout")
             return VLayout.fromJSON(json)
-        if (json.variant == "DynamicText")
+        if (json.__variant__ == "DynamicText")
             return DynamicText.fromJSON(json)     
         return null   
     }

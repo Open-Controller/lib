@@ -1,7 +1,7 @@
 import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 
 export class TextValue implements DynamicValue<string> {
-    variant="TextValue"
+    __variant__="TextValue"
     text:string
     constructor(text:string){
         this.text = text
@@ -13,7 +13,7 @@ export class TextValue implements DynamicValue<string> {
     toJSON(){
         return {
             text:this.text,
-            variant:this.variant
+            __variant__:this.__variant__
         }
     }
     static fromJSON(json:{text:string}){

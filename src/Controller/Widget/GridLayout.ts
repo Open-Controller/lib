@@ -4,7 +4,7 @@ export class GridLayout implements Widget {
     children:Widget[]
     height:number;
     width:number;
-    variant="GridLayout"
+    __variant__="GridLayout"
     constructor({height,width}:{height:number,width:number},children:Widget[]){
         this.children = children
         this.height = height

@@ -7,7 +7,7 @@ export class HttpAction implements Action {
     base:string
     path:string
     name:string
-    variant="HttpAction"
+    __variant__="HttpAction"
     constructor({name,method,base,path}:{name:string,method:Method,base:string,path:string}){
         this.method = method
         this.base = base

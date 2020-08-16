@@ -1,7 +1,7 @@
 import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 
 export class ParsedValue implements DynamicValue<unknown> {
-    variant="ParsedValue"
+    __variant__="ParsedValue"
     input:DynamicValue<string>
     constructor(input:DynamicValue<string>){
         this.input = input

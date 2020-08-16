@@ -31,7 +31,7 @@ describe("Widget",()=>{
             ]))
             run(new HLayout([new Blank()]))
             run(new VLayout([new Blank()]))
-            expect(Widget.fromJSON({variant:"NonExistent"})).to.deep.equal(null)
+            expect(Widget.fromJSON({__variant__:"NonExistent"})).to.deep.equal(null)
         })
     })
 })

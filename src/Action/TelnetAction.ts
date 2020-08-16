@@ -13,7 +13,7 @@ export class TelnetAction implements Action {
     port:number
     name:string
     command:string
-    variant="TelnetAction"
+    __variant__="TelnetAction"
     constructor({name,wsAddress,host,port,command}:{name:string,wsAddress:string,host:string,port:number,command:string}){
         this.name = name
         this.host = host
@@ -47,7 +47,7 @@ export class TelnetAction implements Action {
             port:this.port,
             name:this.name,
             command:this.command,
-            variant:this.variant
+            __variant__:this.__variant__
         }
     }
     static fromJSON(json: { name: string; wsAddress: string; host: string; port: number; command: string }){

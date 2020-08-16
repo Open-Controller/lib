@@ -4,7 +4,7 @@ import { Action } from "../../Action"
 export class Button implements Widget {
     action:Action
     icon:string
-    variant="Button"
+    __variant__="Button"
     constructor({action,icon}:{action:Action,icon?:string}){
         this.action = action
         this.icon = icon

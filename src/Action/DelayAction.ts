@@ -2,7 +2,7 @@ import {Action,ActionSuccess} from "./Action"
 export class DelayAction implements Action {
     time:number
     name:string
-    variant="DelayAction"
+    __variant__="DelayAction"
     constructor({name,time}:{name:string,time:number}){
         this.name = name
         this.time = time

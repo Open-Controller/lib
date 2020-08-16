@@ -2,7 +2,7 @@ import { Widget,WidgetConstructor } from "./Widget"
 
 export class VLayout implements Widget {
     children:Widget[]
-    variant="VLayout"
+    __variant__="VLayout"
     constructor(children:Widget[]){
         this.children = children
     }

@@ -1,7 +1,7 @@
 import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 
 export class DateValue implements DynamicValue<string> {
-    variant="DateValue"
+    __variant__="DateValue"
     onValue(listener:Listener<string>):Unsubscriber{
         const interval = setInterval(()=>{
             listener(new Date().valueOf().toString())
@@ -12,7 +12,7 @@ export class DateValue implements DynamicValue<string> {
     }
     toJSON(){
         return {
-            variant:this.variant
+            __variant__:this.__variant__
         }
     }
     static fromJSON(_:any){

@@ -6,7 +6,7 @@ export class ArrowLayout implements Widget {
     center:Widget
     top:Widget
     bottom:Widget
-    variant="ArrowLayout"
+    __variant__="ArrowLayout"
     constructor({left,right,top,bottom,center}:{
         left:Widget
         right:Widget

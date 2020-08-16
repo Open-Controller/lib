@@ -9,7 +9,7 @@ async function asyncForEach<T>(array:T[], callback:(item:T,index:number,array:T[
 export class Macro implements Action {
     actions:Action[]
     name:string
-    variant="Macro"
+    __variant__="Macro"
     constructor({name,actions}:{name:string,actions:Action[]}){
         this.actions = actions
         this.name = name

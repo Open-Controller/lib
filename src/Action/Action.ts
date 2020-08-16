@@ -5,14 +5,14 @@ export interface ActionSuccess {
 }
 
 export interface Action {
-    variant:string
+    __variant__:string
     name:string
     run():Promise<ActionSuccess>
 }
 
 export class Action {
     static fromJSON(json:any){
-        switch (json.variant){
+        switch (json.__variant__){
             case "HttpAction": 
                 return HttpAction.fromJSON(json);
             case "Macro": 

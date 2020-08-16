@@ -6,7 +6,7 @@ export class TCPAction implements Action {
     port:number
     name:string
     command:string
-    variant="TCPAction"
+    __variant__="TCPAction"
     constructor({name,host,port,command}:{name:string,host:string,port:number,command:string}){
         this.name = name
         this.host = host
@@ -36,7 +36,7 @@ export class TCPAction implements Action {
             port:this.port,
             name:this.name,
             command:this.command,
-            variant:this.variant
+            __variant__:this.__variant__
         }
     }
     static fromJSON(json: { name: string; host: string; port: number; command: string }){
