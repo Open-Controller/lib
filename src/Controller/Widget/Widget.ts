@@ -31,7 +31,7 @@ export class Widget {
 }
 
 export const createWidget = <T extends WidgetConstructor<any>>(widget:T,attributes?:object,...children:Widget[])=>{
-    if (attributes && children) return new widget(attributes,children)
+    if (attributes && children.length) return new widget(attributes,children)
     else if (attributes) return new widget(attributes)
-    else if (children) return new widget(children)
+    else if (children.length) return new widget(children)
 }

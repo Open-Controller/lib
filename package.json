@@ -1,6 +1,6 @@
 {
   "name": "opencontroller-lib",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "description": "Library for remotes.",
   "main": "dist/index.js",
   "author": "Peter PJT <pjtsignups@gmail.com>",
@@ -11,7 +11,7 @@
     "sample": "tsnd --respawn samples/remote/index.ts",
     "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom -d",
     "commit": "git-cz",
-    "test": "nyc mocha \"src/**/*.test.ts\""
+    "test": "nyc --reporter=html --reporter=text mocha \"src/**/*.test.ts\""
   },
   "nyc": {
     "include": [
