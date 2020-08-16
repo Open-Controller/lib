@@ -1,5 +1,6 @@
 import {Action,ActionSuccess} from "./Action"
-import net from "net"
+import * as net from "net"
+
 export class TCPAction implements Action {
     host:string
     port:number
