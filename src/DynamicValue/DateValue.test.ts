@@ -7,7 +7,7 @@ describe("DateValue",()=>{
     describe("#onValue()",()=>{
         it("should send the date",(done)=>{
             const unsubscribe = new DateValue().onValue((date)=>{
-                expect(date).to.equal(new Date().valueOf().toString())
+                expect(+date).to.approximately(new Date().valueOf(),100)
                 done()
             })
             after(()=>unsubscribe())
