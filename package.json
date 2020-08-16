@@ -11,7 +11,26 @@
     "sample": "tsnd --respawn samples/remote/index.ts",
     "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom -d",
     "commit": "git-cz",
-    "test": "mocha -r ts-node/register \"src/**/*.test.ts\""
+    "test": "nyc mocha \"src/**/*.test.ts\""
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",
@@ -24,6 +43,8 @@
     "htm": "^3.0.4",
     "mocha": "^8.1.1",
     "net": "^1.0.2",
+    "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
     "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
   },
