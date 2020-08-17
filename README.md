@@ -56,5 +56,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests and docs as appropriate.
 
+Commit messages should follow the [Conventional Commit Spec](https://www.conventionalcommits.org/en/v1.0.0/)
+
 ## // license
 [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/)
