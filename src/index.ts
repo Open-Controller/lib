@@ -1,5 +1,5 @@
 export * from "./Action"
-export * from "./ActionClient"
+export * from "./Holders"
 export * from "./Controller"
 export * from "./Room"
 export * from "./House"

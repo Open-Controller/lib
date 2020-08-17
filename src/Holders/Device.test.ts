@@ -2,17 +2,23 @@ import { describe,it } from "mocha"
 import { expect } from "chai"
 import { Device } from "./Device"
 import { DelayAction } from "../Action"
+import { TextValue } from "../DynamicValue"
 describe("Device",()=>{
     describe("#getAction()",()=>{
         it("should get the right action",async ()=>{
             const action = new DelayAction({name:"delay",time:50})
+            const dynamicValue = new TextValue("test","test")
             const device = new Device({
                 name:"test",
                 actions:[
                     action
+                ],
+                dynamicValues:[
+                    dynamicValue
                 ]
             })
             expect(device.getAction("delay")).to.equal(action)
+            expect(device.getDynamicValue("test")).to.equal(dynamicValue)
         })
     })
     describe("#run()",()=>{

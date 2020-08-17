@@ -1,9 +1,9 @@
 import { ActionSuccess, Action } from "../Action/Action";
 
 /**
- * ActionClients are structures to organize [[Action]]s into
+ * ActionHolders are structures to organize [[Action]]s into
  */
-export interface ActionClient {
+export interface ActionHolder {
     /**Array of [[Action]]s stored */
     actions:Action[]
     /**Runs an [[Action]] based on its name */
