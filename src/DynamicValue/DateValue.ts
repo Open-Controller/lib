@@ -1,5 +1,13 @@
 import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 
+/**
+ * A [[DynamicValue]] that contains the Unix time
+ * 
+ * @example
+ * ```javascript
+ * new DateValue()
+ * ```
+ */
 export class DateValue implements DynamicValue<string> {
     __variant__="DateValue"
     onValue(listener:Listener<string>):Unsubscriber{

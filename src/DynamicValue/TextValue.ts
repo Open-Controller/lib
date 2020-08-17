@@ -1,5 +1,8 @@
 import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 
+/**
+ * A [[DynamicValue]] that holds a constant `string` value
+ */
 export class TextValue implements DynamicValue<string> {
     __variant__="TextValue"
     text:string
