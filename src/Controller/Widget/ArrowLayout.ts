@@ -10,7 +10,7 @@ import { staticImplements } from "../../utils/staticImplements"
  * ```
  * 
  * @example
- * ```typescript
+ * ```jsx
  * new ArrowLayout({
  *     left:new Blank(),
  *     right:new Blank(),
@@ -18,6 +18,8 @@ import { staticImplements } from "../../utils/staticImplements"
  *     top:new Blank(),
  *     bottom:new Blank(),
  * })
+ * //JSX
+ * <ArrowLayout left={<Blank/>} right={<Blank/>} center={<Blank/>} top={<Blank/>} bottom={<Blank/>}>
  * ```
  */
 

@@ -6,7 +6,7 @@ import { staticImplements } from "../../utils/staticImplements"
  * A [[Widget]] that holds an [[Action]], and when pressed on the client the action is run
  * 
  * @example
- * ```typescript
+ * ```jsx
  * new Button({icon:"power-on",action: new HttpAction({
  *       name:"on",
  *       method:"GET",
@@ -14,6 +14,13 @@ import { staticImplements } from "../../utils/staticImplements"
  *       path:"turnOn"
  *    })
  * })
+ * //JSX
+ * <Button icon="power-on" action={new HttpAction({
+ *       name:"on",
+ *       method:"GET",
+ *       base:"https://device.ip",
+ *       path:"turnOn"
+ *    })}/>
  * ```
  */
 @staticImplements<WidgetConstructor<{action:Action,icon?:string}>>()

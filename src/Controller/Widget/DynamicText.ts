@@ -6,8 +6,10 @@ import { staticImplements } from "../../utils/staticImplements"
  * A [[Widget]] to display a [[DynamicValue]] holding a string
  * 
  * @example
- * ```typescript
+ * ```jsx
  * new DynamicText({text:new TextValue("test")})
+ * //JSX
+ * <DynamicText text={new TextValue("test")}/>
  * ```
  */
 @staticImplements<WidgetConstructor<{text:DynamicValue<string>}>>()
