@@ -1,5 +1,6 @@
 import { Widget, WidgetConstructor } from "./Widget"
 import { DynamicValue } from "../../DynamicValue"
+import { staticImplements } from "../../utils/staticImplements"
 
 /**
  * A [[Widget]] to display a [[DynamicValue]] holding a string
@@ -9,6 +10,7 @@ import { DynamicValue } from "../../DynamicValue"
  * new DynamicText({text:new TextValue("test")})
  * ```
  */
+@staticImplements<WidgetConstructor<{text:DynamicValue<string>}>>()
 export class DynamicText implements Widget {
     text:DynamicValue<string>
     __variant__="DynamicText"
@@ -19,5 +21,3 @@ export class DynamicText implements Widget {
         return new DynamicText({text:DynamicValue.fromJSON(json.text)})
     }
 }
-
-const check:WidgetConstructor<{text:DynamicValue<string>}> = DynamicText

@@ -40,7 +40,7 @@ export class Controller {
         this.name = name
         this.layout = layout
     }
-    static fromJSON(json:any){
+    static fromJSON(json:{name:string,layout:any[]}){
         return new Controller({
             name:json.name,
             layout:json.layout.map(widget=>Widget.fromJSON(widget))

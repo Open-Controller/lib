@@ -1,5 +1,33 @@
 import { Widget, WidgetConstructor } from "./Widget"
+import { staticImplements } from "../../utils/staticImplements"
 
+/**
+ * A [[Widget]] that stores 5 Widgets to be displayed on the client in a 4-branch format:
+ * ```
+ *       top
+ * left center right
+ *      bottom
+ * ```
+ * 
+ * @example
+ * ```typescript
+ * new ArrowLayout({
+ *     left:new Blank(),
+ *     right:new Blank(),
+ *     center:new Blank(),
+ *     top:new Blank(),
+ *     bottom:new Blank(),
+ * })
+ * ```
+ */
+
+@staticImplements<WidgetConstructor<{
+    left:Widget,
+    right:Widget,
+    center:Widget,
+    top:Widget,
+    bottom:Widget
+}>>()
 export class ArrowLayout implements Widget {
     left:Widget
     right:Widget
@@ -24,5 +52,3 @@ export class ArrowLayout implements Widget {
         return new ArrowLayout({left:Widget.fromJSON(json.left),right:Widget.fromJSON(json.right),top:Widget.fromJSON(json.top),bottom:Widget.fromJSON(json.bottom),center:Widget.fromJSON(json.center)});
     }
 }
-
-const check:WidgetConstructor<{}> = ArrowLayout
