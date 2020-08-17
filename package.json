@@ -1,6 +1,6 @@
 {
   "name": "opencontroller-lib",
-  "version": "0.15.3",
+  "version": "0.15.4",
   "description": "Library for remotes.",
   "main": "dist/index.js",
   "author": "Peter PJT <pjtsignups@gmail.com>",
@@ -9,7 +9,7 @@
   "repository": "git://github.com/Open-Controller/opencontroller-lib.git",
   "scripts": {
     "sample": "tsnd --respawn samples/remote/index.ts",
-    "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom -d",
+    "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom -d --esModuleInterop",
     "build:docs": "typedoc --mode file --out docs src --theme node_modules/eledoc/bin/default/",
     "commit": "git-cz",
     "test": "nyc --reporter=lcov --reporter=text mocha \"src/**/*.test.ts\""

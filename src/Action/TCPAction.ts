@@ -1,5 +1,5 @@
 import {Action,ActionSuccess} from "./Action"
-import * as net from "net"
+import net from "net"
 
 /**
  * An [[Action]] to send a TCP request
@@ -14,6 +14,7 @@ import * as net from "net"
  *   })
  * ```
  */
+console.log(net)
 export class TCPAction implements Action {
     host:string
     port:number
