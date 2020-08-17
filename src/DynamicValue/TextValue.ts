@@ -6,20 +6,16 @@ import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 export class TextValue implements DynamicValue<string> {
     __variant__="TextValue"
     text:string
-    constructor(text:string){
+    name:string|void
+    constructor(text:string,name?:string){
         this.text = text
+        this.name = name
     }
     onValue(listener:Listener<string>):Unsubscriber{
         listener(this.text)
         return ()=> {}
     }
-    toJSON(){
-        return {
-            text:this.text,
-            __variant__:this.__variant__
-        }
-    }
-    static fromJSON(json:{text:string}){
-        return new TextValue(json.text)
+    static fromJSON(json:{text:string,name?:string}){
+        return new TextValue(json.text,json.name)
     }
 }

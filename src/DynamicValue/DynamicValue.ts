@@ -16,6 +16,7 @@ export type Unsubscriber = ()=>void
 export interface DynamicValue<T> {
     /**Metadata holding the class name of the DynamicValue, so it can be mapped back to the class from a JSON */
     __variant__:string
+    name:string|void
     /**A function to subscribe to the value that is held by the DynamicValue*/
     onValue:(listener:Listener<T>)=>Unsubscriber
 }

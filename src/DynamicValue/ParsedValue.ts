@@ -13,8 +13,10 @@ import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
 export class ParsedValue implements DynamicValue<number|string|object> {
     __variant__="ParsedValue"
     input:DynamicValue<string>
-    constructor(input:DynamicValue<string>){
+    name:string|void
+    constructor(input:DynamicValue<string>,name?:string){
         this.input = input
+        this.name = name
     }
     onValue(listener:Listener<number|string|object>):Unsubscriber{
         const unsubscribe = this.input.onValue(val=> {
@@ -24,7 +26,7 @@ export class ParsedValue implements DynamicValue<number|string|object> {
             unsubscribe()
         }
     }
-    static fromJSON(json: { input: any }){
-        return new ParsedValue(DynamicValue.fromJSON(json.input))
+    static fromJSON(json: { input: any, name?:string }){
+        return new ParsedValue(DynamicValue.fromJSON(json.input),json.name)
     }
 }
