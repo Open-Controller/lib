@@ -14,7 +14,6 @@ import net from "net"
  *   })
  * ```
  */
-console.log(net)
 export class TCPAction implements Action {
     host:string
     port:number

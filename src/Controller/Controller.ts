@@ -1,4 +1,4 @@
-import { Widget } from "./Widget/Widget";
+import { Widget } from "./Widget";
 
 /**
  * Controllers are the main unit of the library. They store an array of widgets that are to be displayed together on a client.
