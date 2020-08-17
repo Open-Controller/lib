@@ -1,7 +1,7 @@
 import { Widget } from "./Widget";
 
 /**
- * Controllers are the main unit of the library. They store an array of widgets that are to be displayed together on a client.
+ * Controllers are the main unit of the library. They store an array of [[Widget]]s that are to be displayed together on a client.
  * 
  * @example
  * ```typescript
