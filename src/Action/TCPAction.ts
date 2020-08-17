@@ -1,12 +1,28 @@
 import {Action,ActionSuccess} from "./Action"
 import * as net from "net"
 
+/**
+ * An [[Action]] to send a TCP request
+ * 
+ * @example
+ * ```typescript
+ * new TCPAction({
+ *       name:"test",
+ *       host:"0.0.0.0",
+ *       port:8124,
+ *       command:"test"
+ *   })
+ * ```
+ */
 export class TCPAction implements Action {
     host:string
     port:number
     name:string
     command:string
     __variant__="TCPAction"
+    /**
+     * @param command the data sent to the TCP server
+     */
     constructor({name,host,port,command}:{name:string,host:string,port:number,command:string}){
         this.name = name
         this.host = host

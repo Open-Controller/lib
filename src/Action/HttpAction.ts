@@ -1,6 +1,22 @@
 import {Action,ActionSuccess} from "./Action"
 import "isomorphic-fetch"
-export type Method = "GET"|"POST"
+/**
+ * HTTP method name strings
+ */
+export type Method = "GET"|"POST"|"PUT"|"DELETE"|"PATCH"
+/**
+ * An [[Action]] to send an HTTP request
+ * 
+ * @example
+ * ```typescript
+ * new HttpAction({
+ *       name:"test",
+ *       method:"GET",
+ *       base:"https://jsonplaceholder.typicode.com/",
+ *       path:"todos"
+ *   })
+ * ```
+ */
 export class HttpAction implements Action {
     method:Method
     url:string
@@ -8,6 +24,10 @@ export class HttpAction implements Action {
     path:string
     name:string
     __variant__="HttpAction"
+    /**
+     * @param base A base part of the URL
+     * @param path The path added after the base
+     */
     constructor({name,method,base,path}:{name:string,method:Method,base:string,path:string}){
         this.method = method
         this.base = base

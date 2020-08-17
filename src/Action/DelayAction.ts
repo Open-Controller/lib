@@ -1,8 +1,7 @@
 import {Action,ActionSuccess} from "./Action"
-/**An Action to delay execution, primarily used for a [[Macro]] 
+/**An [[Action]] to delay execution, primarily used for a [[Macro]] 
  * 
- * ### Example usage:
- * 
+ * @example
  * ```typescript
  * new DelayAction({name:"wait",time:1000})
  * ```
