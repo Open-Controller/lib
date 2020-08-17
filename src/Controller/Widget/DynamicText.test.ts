@@ -3,5 +3,5 @@ import { jsonTest } from "../../utils/jsonTest"
 import { DynamicText } from "./DynamicText"
 import {  TextValue } from "../../DynamicValue"
 describe("DynamicText",()=>{
-    jsonTest(DynamicText,[{text:new TextValue("test"),key:"test"}])
+    jsonTest(DynamicText,[{text:new TextValue("test")}])
 })
