@@ -62,8 +62,5 @@
   },
   "react-native": {
     "net": "react-native-tcp-socket"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@Open-Controller"
   }
 }
