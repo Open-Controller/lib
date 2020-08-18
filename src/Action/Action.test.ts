@@ -17,13 +17,11 @@ describe("Action",()=>{
                 base:"https://jsonplaceholder.typicode.com/",
                 path:"todos"
             }))
-            run(new Macro({
-                name:"test",
-                actions:[
-                    new DelayAction({name:"delay",time:50})
-                ]
-            }))
-            run(new DelayAction({name:"delay",time:50}))
+            run(new Macro([
+                new DelayAction(50)
+            ],
+            "test"))
+            run(new DelayAction(50))
             run(new TCPAction({
                 name:"test",
                 host:"1.1.1.1",

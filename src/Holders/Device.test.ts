@@ -6,7 +6,7 @@ import { TextValue } from "../DynamicValue"
 describe("Device",()=>{
     describe("#getAction()",()=>{
         it("should get the right action",async ()=>{
-            const action = new DelayAction({name:"delay",time:50})
+            const action = new DelayAction(50,"delay")
             const dynamicValue = new TextValue("test","test")
             const device = new Device({
                 name:"test",
@@ -23,7 +23,7 @@ describe("Device",()=>{
     })
     describe("#run()",()=>{
         it("should run the action",async ()=>{
-            const action = new DelayAction({name:"delay",time:50})
+            const action = new DelayAction(50,"delay")
             const device = new Device({
                 name:"test",
                 actions:[

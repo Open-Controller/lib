@@ -22,13 +22,13 @@ export class HttpAction implements Action {
     url:string
     base:string
     path:string
-    name:string
+    name:string|void
     __variant__="HttpAction"
     /**
      * @param base A base part of the URL
      * @param path The path added after the base
      */
-    constructor({name,method,base,path}:{name:string,method:Method,base:string,path:string}){
+    constructor({name,method,base,path}:{name?:string,method:Method,base:string,path:string}){
         this.method = method
         this.base = base
         this.path = path
@@ -39,7 +39,7 @@ export class HttpAction implements Action {
         const response = await fetch(this.url,{method:this.method})
         return {successful:response.ok}
     }
-    static fromJSON(json:{name:string,method:Method,base:string,path:string}){
+    static fromJSON(json:{name?:string,method:Method,base:string,path:string}){
         return new HttpAction({name:json.name,method:json.method,base:json.base,path:json.path})
     }
 }

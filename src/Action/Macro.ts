@@ -11,20 +11,17 @@ async function asyncForEach<T>(array:T[], callback:(item:T,index:number,array:T[
  * 
  * @example
  * ```typescript
- * new Macro({
- *       name:"test",
- *       actions:[
- *           new DelayAction({name:"1",time:50}),
- *           new DelayAction({name:"2",time:500}),
- *       ]
- *   })
+ * new Macro([
+ *     new DelayAction({name:"1",time:50}),
+ *     new DelayAction({name:"2",time:500}),
+ * ],"test")
  * ```
  */
 export class Macro implements Action {
     actions:Action[]
-    name:string
+    name:string|void
     __variant__="Macro"
-    constructor({name,actions}:{name:string,actions:Action[]}){
+    constructor(actions:Action[],name?:string){
         this.actions = actions
         this.name = name
     }
@@ -34,7 +31,7 @@ export class Macro implements Action {
             successful:true
         }
     }
-    static fromJSON(json:{name:string,actions:any[]}){
-        return new Macro({name:json.name,actions:json.actions.map(Action.fromJSON)})
+    static fromJSON(json:{name?:string,actions:any[]}){
+        return new Macro(json.actions.map(Action.fromJSON),json.name)
     }
 }

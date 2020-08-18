@@ -24,7 +24,7 @@ describe("Widget",()=>{
                 bottom:new Blank(),
             }))
             run(new Blank())
-            run(new Button({action:new DelayAction({name:"delay",time:50}),icon:"test"}))
+            run(new Button({action:new DelayAction(50,"delay"),icon:"test"}))
             run(new DynamicText({text:new TextValue("test")}))
             run(new GridLayout({width:1,height:1},[
                 new Blank()

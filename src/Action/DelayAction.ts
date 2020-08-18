@@ -3,17 +3,17 @@ import {Action,ActionSuccess} from "./Action"
  * 
  * @example
  * ```typescript
- * new DelayAction({name:"wait",time:1000})
+ * new DelayAction(1000,"wait")
  * ```
 */
 export class DelayAction implements Action {
     time:number
-    name:string
+    name:string|void
     __variant__="DelayAction"
     /**
      * @param time Time to delay for in milliseconds
      */
-    constructor({name,time}:{name:string,time:number}){
+    constructor(time:number,name?:string){
         this.name = name
         this.time = time
     }
@@ -21,7 +21,7 @@ export class DelayAction implements Action {
         await new Promise(r => setTimeout(r, this.time));
         return {successful:true}
     }
-    static fromJSON(json: { name: string; time: number }){
-        return new DelayAction({name:json.name,time:json.time})
+    static fromJSON(json: { name?: string; time: number }){
+        return new DelayAction(json.time,json.name)
     }
 }

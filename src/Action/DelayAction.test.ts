@@ -5,12 +5,12 @@ import { jsonTest } from "../utils/jsonTest"
 describe("DelayAction",()=>{
     describe("#run()",()=>{
         it("should delay",async ()=>{
-            const action = new DelayAction({name:"test",time:50})
+            const action = new DelayAction(50,"test")
             const start = new Date().valueOf()
             await action.run()
             const end = new Date().valueOf()
             expect(end-start).to.be.approximately(50,10)
         })
     })
-    jsonTest(DelayAction,[{name:"test",time:50}])
+    jsonTest(DelayAction,[50,"test"])
 })

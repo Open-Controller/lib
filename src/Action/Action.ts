@@ -9,8 +9,8 @@ export interface ActionSuccess {
 export interface Action {
     /**Metadata of the class name for parsing from a JSON */
     __variant__:string
-    /**A unique identifier for an action within a device */
-    name:string
+    /**A unique identifier for an action within a [[Device]] */
+    name:string|void
     /**Executes the task, returning a promise containing its success */
     run():Promise<ActionSuccess>
 }
