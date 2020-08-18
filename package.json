@@ -1,5 +1,5 @@
 {
-  "name": "lib",
+  "name": "@open-controller/lib",
   "version": "0.18.0",
   "description": "Library for remotes.",
   "main": "dist/index.js",
