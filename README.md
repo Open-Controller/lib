@@ -1,9 +1,9 @@
-[![codecov](https://codecov.io/gh/Open-Controller/opencontroller-lib/branch/master/graph/badge.svg)](https://codecov.io/gh/Open-Controller/opencontroller-lib)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Open-Controller/opencontroller-lib/Publish)](https://github.com/Open-Controller/opencontroller-lib/actions)
-[![Github Releases Downloads](https://img.shields.io/github/downloads/Open-Controller/opencontroller-lib/total)](https://github.com/Open-Controller/opencontroller-lib/releases)
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/Open-Controller/opencontroller-lib)](https://github.com/Open-Controller/opencontroller-lib/blob/master/package.json)
+[![codecov](https://codecov.io/gh/Open-Controller/lib/branch/master/graph/badge.svg)](https://codecov.io/gh/Open-Controller/lib)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Open-Controller/lib/Publish)](https://github.com/Open-Controller/lib/actions)
+[![Github Releases Downloads](https://img.shields.io/github/downloads/Open-Controller/lib/total)](https://github.com/Open-Controller/lib/releases)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/Open-Controller/lib)](https://github.com/Open-Controller/lib/blob/master/package.json)
 
-# opencontroller-lib
+# Open Controller Lib
 A library used to represent Open Controller homes for Open Controller clients.  It is designed to retain all information in JSON form, for portability.
 
 ## // structure

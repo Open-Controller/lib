@@ -6,7 +6,7 @@
   "author": "Peter PJT <pjtsignups@gmail.com>",
   "license": "GPL-3.0-only",
   "private": false,
-  "repository": "git://github.com/Open-Controller/opencontroller-lib.git",
+  "repository": "git://github.com/Open-Controller/lib.git",
   "scripts": {
     "sample": "tsnd --respawn samples/remote/index.ts",
     "build": "tsc ./src/index.ts --outDir ./dist --lib esnext,dom -d --esModuleInterop --experimentalDecorators",
