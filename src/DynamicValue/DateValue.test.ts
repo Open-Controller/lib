@@ -13,4 +13,9 @@ describe("DateValue",()=>{
             after(()=>unsubscribe())
         })
     })
+    describe("#getValue()",()=>{
+        it("should return the date",()=>{
+            expect(+new DateValue().getValue()).to.approximately(new Date().valueOf(),100)
+        })
+    })
 })

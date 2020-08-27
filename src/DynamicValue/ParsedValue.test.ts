@@ -14,4 +14,10 @@ describe("ParsedValue",()=>{
             after(()=>unsubscribe())
         })
     })
+    describe("#getValue()",()=>{
+        it("should return the the json parsed version",()=>{
+            expect(new ParsedValue(new TextValue(JSON.stringify({t:"test"}))).getValue())
+                .to.deep.equal({t:"test"})
+        })
+    })
 })

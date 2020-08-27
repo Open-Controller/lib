@@ -22,6 +22,9 @@ export class DateValue implements DynamicValue<string> {
             clearInterval(interval)
         }
     }
+    getValue(){
+        return new Date().valueOf().toString()
+    }
     static fromJSON(json:{name?:string}){
         return new DateValue(json.name)
     }

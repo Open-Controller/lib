@@ -15,6 +15,9 @@ export class TextValue implements DynamicValue<string> {
         listener(this.text)
         return ()=> {}
     }
+    getValue(){
+        return this.text
+    }
     static fromJSON(json:{text:string,name?:string}){
         return new TextValue(json.text,json.name)
     }
