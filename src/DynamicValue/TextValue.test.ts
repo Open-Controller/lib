@@ -8,9 +8,9 @@ describe("TextValue",()=>{
         it("should send the string",(done)=>{
             const unsubscribe = new TextValue("test").onValue((text)=>{
                 expect(text).to.equal("test")
+                setImmediate(()=>unsubscribe())
                 done()
             })
-            after(()=>unsubscribe())
         })
     })
     describe("#getValue()", ()=>{

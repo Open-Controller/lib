@@ -9,9 +9,9 @@ describe("ParsedValue",()=>{
         it("should send the json parse",(done)=>{
             const unsubscribe = new ParsedValue(new TextValue(JSON.stringify({t:"test"}))).onValue((parsed)=>{
                 expect(parsed).to.deep.equal({t:"test"})
+                setImmediate(()=>unsubscribe())
                 done()
             })
-            after(()=>unsubscribe())
         })
     })
     describe("#getValue()",()=>{

@@ -25,7 +25,7 @@ describe("HttpValue",()=>{
                     "title": "delectus aut autem",
                     "completed": false
                 })
-                unsubscribe()
+                setImmediate(()=>unsubscribe())
                 done()
             })
         })

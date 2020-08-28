@@ -8,9 +8,9 @@ describe("DateValue",()=>{
         it("should send the date",(done)=>{
             const unsubscribe = new DateValue().onValue((date)=>{
                 expect(+date).to.approximately(new Date().valueOf(),100)
+                setImmediate(()=>unsubscribe())
                 done()
             })
-            after(()=>unsubscribe())
         })
     })
     describe("#getValue()",()=>{
