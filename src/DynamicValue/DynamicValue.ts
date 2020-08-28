@@ -1,4 +1,4 @@
-import { DateValue, ParsedValue, TextValue } from ".";
+import { DateValue, IndexValue, ParsedValue, SplitValue, TextValue } from ".";
 import { HttpValue } from "./HttpValue";
 
 /**
@@ -37,6 +37,10 @@ export class DynamicValue<T> {
                 return TextValue.fromJSON(json)
             case "HttpValue":
                 return HttpValue.fromJSON(json)
+            case "SplitValue":
+                return SplitValue.fromJSON(json)
+            case "IndexValue":
+                return IndexValue.fromJSON(json)
         }
     }
 }

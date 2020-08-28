@@ -5,6 +5,8 @@ import { DateValue } from "./DateValue"
 import { ParsedValue } from "./ParsedValue"
 import { TextValue } from "./TextValue"
 import { HttpValue } from "./HttpValue"
+import { SplitValue } from "./SplitValue"
+import { IndexValue } from "./IndexValue"
 
 describe("DynamicValue",()=>{
     describe("#fromJSON()",()=>{
@@ -15,6 +17,8 @@ describe("DynamicValue",()=>{
             run(new DateValue())
             run(new TextValue("test"))
             run(new ParsedValue(new TextValue("test")))
+            run(new SplitValue(new TextValue("a,b"),","))
+            run(new IndexValue(new SplitValue(new TextValue("a,b"),","),0))
             run(new HttpValue({
                 name:"test",
                 method:"GET",
