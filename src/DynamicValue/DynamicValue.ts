@@ -19,7 +19,7 @@ export interface DynamicValue<T> {
     name:string|void
     /**A function to subscribe to the value that is held by the DynamicValue*/
     onValue:(listener:Listener<T>)=>Unsubscriber
-    getValue:()=>T
+    getValue:()=>Promise<T>
 }
 
 export class DynamicValue<T> {

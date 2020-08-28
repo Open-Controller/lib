@@ -26,8 +26,8 @@ export class ParsedValue implements DynamicValue<number|string|object> {
             unsubscribe()
         }
     }
-    getValue(){
-        return JSON.parse(this.input.getValue())
+    async getValue(){
+        return JSON.parse(await this.input.getValue())
     }
     static fromJSON(json: { input: any, name?:string }){
         return new ParsedValue(DynamicValue.fromJSON(json.input),json.name)

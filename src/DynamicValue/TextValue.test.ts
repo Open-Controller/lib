@@ -13,9 +13,9 @@ describe("TextValue",()=>{
             after(()=>unsubscribe())
         })
     })
-    describe("#getValue()",()=>{
-        it("should return the string",()=>{
-            expect(new TextValue("test").getValue()).to.equal("test")
+    describe("#getValue()", ()=>{
+        it("should return the string",async ()=>{
+            expect(await new TextValue("test").getValue()).to.equal("test")
         })
     })
 })

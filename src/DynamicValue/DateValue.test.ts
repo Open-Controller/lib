@@ -14,8 +14,8 @@ describe("DateValue",()=>{
         })
     })
     describe("#getValue()",()=>{
-        it("should return the date",()=>{
-            expect(+new DateValue().getValue()).to.approximately(new Date().valueOf(),100)
+        it("should return the date",async()=>{
+            expect(+await new DateValue().getValue()).to.approximately(new Date().valueOf(),100)
         })
     })
 })
