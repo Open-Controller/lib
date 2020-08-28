@@ -1,9 +1,7 @@
 import {Action,ActionSuccess} from "./Action"
 import "isomorphic-fetch"
-/**
- * HTTP method name strings
- */
-export type Method = "GET"|"POST"|"PUT"|"DELETE"|"PATCH"
+import { Method } from "../utils/Method"
+
 /**
  * An [[Action]] to send an HTTP request
  * 

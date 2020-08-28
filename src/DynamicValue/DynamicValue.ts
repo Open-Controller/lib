@@ -1,4 +1,5 @@
 import { DateValue, ParsedValue, TextValue } from ".";
+import { HttpValue } from "./HttpValue";
 
 /**
  * A callback for a [[DynamicValue]]
@@ -34,6 +35,8 @@ export class DynamicValue<T> {
                 return ParsedValue.fromJSON(json)
             case "TextValue":
                 return TextValue.fromJSON(json)
+            case "HttpValue":
+                return HttpValue.fromJSON(json)
         }
     }
 }
