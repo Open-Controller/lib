@@ -12,10 +12,10 @@ import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
  */
 export class IndexValue<V> implements DynamicValue<V> {
     __variant__="IndexValue"
-    input:DynamicValue<any[]>
+    input:DynamicValue<object>
     name:string|void
     index:string|number
-    constructor(input:DynamicValue<any[]>,index:string|number,name?:string){
+    constructor(input:DynamicValue<object>,index:string|number,name?:string){
         this.input = input
         this.index = index
         this.name = name
