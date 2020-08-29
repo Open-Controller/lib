@@ -7,6 +7,7 @@ import { TextValue } from "./TextValue"
 import { HttpValue } from "./HttpValue"
 import { SplitValue } from "./SplitValue"
 import { IndexValue } from "./IndexValue"
+import { XMLValue } from "./XMLValue"
 
 describe("DynamicValue",()=>{
     describe("#fromJSON()",()=>{
@@ -17,6 +18,7 @@ describe("DynamicValue",()=>{
             run(new DateValue())
             run(new TextValue("test"))
             run(new ParsedValue(new TextValue("test")))
+            run(new XMLValue(new TextValue("<root>test</root>")))
             run(new SplitValue(new TextValue("a,b"),","))
             run(new IndexValue(new SplitValue(new TextValue("a,b"),","),0))
             run(new HttpValue({
