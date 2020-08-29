@@ -1,6 +1,6 @@
 {
   "name": "@open-controller/lib",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Library for remotes.",
   "main": "dist/index.js",
   "author": "Peter PJT <pjtsignups@gmail.com>",
@@ -34,7 +34,6 @@
     "instrument": true
   },
   "devDependencies": {
-    "@types/xml2js": "^0.4.5",
     "@types/chai": "^4.2.12",
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/mocha": "^8.0.2",
@@ -55,7 +54,7 @@
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "net": "^1.0.2",
-    "xml2js": "^0.4.23"
+    "fast-xml-parser": "^3.17.4"
   },
   "config": {
     "commitizen": {
