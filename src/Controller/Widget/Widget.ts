@@ -1,4 +1,4 @@
-import { ArrowLayout, Blank, Button, GridLayout, HLayout, VLayout, DynamicText } from "../";
+import { ArrowLayout, Blank, Button, GridLayout, HLayout, VLayout, DynamicText, ToggleButton } from "../";
 
 export interface WidgetConstructor<T extends object> {
     new (attributes?:T,children?:Widget[]):Widget
@@ -30,7 +30,9 @@ export class Widget {
         if (json.__variant__ == "VLayout")
             return VLayout.fromJSON(json)
         if (json.__variant__ == "DynamicText")
-            return DynamicText.fromJSON(json)     
+            return DynamicText.fromJSON(json)  
+        if (json.__variant__ == "ToggleButton")
+            return ToggleButton.fromJSON(json)      
         return null   
     }
 }

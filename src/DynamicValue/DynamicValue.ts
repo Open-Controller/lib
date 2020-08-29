@@ -1,4 +1,5 @@
 import { DateValue, IndexValue, ParsedValue, SplitValue, TextValue, XMLValue } from ".";
+import { BooleanizedValue } from "./BooleanizedValue";
 import { HttpValue } from "./HttpValue";
 
 /**
@@ -43,6 +44,8 @@ export class DynamicValue<T> {
                 return IndexValue.fromJSON(json)
             case "XMLValue":
                 return XMLValue.fromJSON(json)
+            case "BooleanizedValue":
+                return BooleanizedValue.fromJSON(json)
         }
     }
 }

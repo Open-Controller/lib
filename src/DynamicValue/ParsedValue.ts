@@ -10,7 +10,7 @@ import { DynamicValue, Listener, Unsubscriber } from "./DynamicValue"
  * )
  * ```
  */
-export class ParsedValue implements DynamicValue<number|string|object> {
+export class ParsedValue<V> implements DynamicValue<V> {
     __variant__="ParsedValue"
     input:DynamicValue<string>
     name:string|void
@@ -18,7 +18,7 @@ export class ParsedValue implements DynamicValue<number|string|object> {
         this.input = input
         this.name = name
     }
-    onValue(listener:Listener<number|string|object>):Unsubscriber{
+    onValue(listener:Listener<V>):Unsubscriber{
         const unsubscribe = this.input.onValue(val=> {
             listener(JSON.parse(val))
         })

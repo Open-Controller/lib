@@ -6,10 +6,11 @@ import { Blank } from "./Blank"
 import { Button } from "./Button"
 import { DelayAction } from "../../Action"
 import { DynamicText } from "./DynamicText"
-import { TextValue } from "../../DynamicValue"
+import { ParsedValue, TextValue } from "../../DynamicValue"
 import { GridLayout } from "./GridLayout"
 import { HLayout } from "./HLayout"
 import { VLayout } from "./VLayout"
+import { ToggleButton } from "./ToggleButton"
 describe("Widget",()=>{
     describe("#fromJSON()",()=>{
         it("should return the correct class",()=>{
@@ -25,6 +26,7 @@ describe("Widget",()=>{
             }))
             run(new Blank())
             run(new Button({action:new DelayAction(50,"delay"),icon:"test"}))
+            run(new ToggleButton({action:new DelayAction(50,"delay"),state:new ParsedValue<boolean>(new TextValue("true")),icon:"test"}))
             run(new DynamicText({text:new TextValue("test")}))
             run(new GridLayout({width:1,height:1},[
                 new Blank()
