@@ -1,6 +1,8 @@
 import { DateValue, IndexValue, ParsedValue, SplitValue, TextValue, XMLValue } from ".";
 import { BooleanizedValue } from "./BooleanizedValue";
 import { HttpValue } from "./HttpValue";
+import { NumberValue } from "./NumberValue";
+import { StringifiedValue } from "./StringifiedValue";
 
 /**
  * A callback for a [[DynamicValue]]
@@ -46,6 +48,10 @@ export class DynamicValue<T> {
                 return XMLValue.fromJSON(json)
             case "BooleanizedValue":
                 return BooleanizedValue.fromJSON(json)
+            case "NumberValue":
+                return NumberValue.fromJSON(json)
+            case "StringifiedValue":
+                return StringifiedValue.fromJSON(json)
         }
     }
 }
