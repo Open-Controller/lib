@@ -27,12 +27,14 @@ import { staticImplements } from "../../utils/staticImplements"
 export class Button implements Widget {
     action:Action
     icon:string
+    text:string
     __variant__="Button"
-    constructor({action,icon}:{action:Action,icon?:string}){
+    constructor({action,icon,text}:{action:Action,icon?:string,text?:string}){
         this.action = action
         this.icon = icon
+        this.text = text
     }
-    static fromJSON(json: { action: any; icon: string }){
-        return new Button({action:Action.fromJSON(json.action),icon:json.icon});
+    static fromJSON(json: { action: any; icon?: string; text?:string }){
+        return new Button({action:Action.fromJSON(json.action),icon:json.icon,text:json.text});
     }
 }

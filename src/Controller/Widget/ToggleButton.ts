@@ -29,14 +29,16 @@ import { DynamicValue } from "../../DynamicValue"
 export class ToggleButton implements Widget {
     action:Action
     icon:string
+    text:string
     state:DynamicValue<boolean>
     __variant__="ToggleButton"
-    constructor({action,state,icon}:{action:Action,state:DynamicValue<boolean>,icon?:string}){
+    constructor({action,state,icon,text}:{action:Action,state:DynamicValue<boolean>,icon?:string,text?:string}){
         this.action = action
         this.icon = icon
+        this.text = text
         this.state = state
     }
-    static fromJSON(json: { action: any; state:any; icon: string }){
-        return new ToggleButton({action:Action.fromJSON(json.action),state:DynamicValue.fromJSON(json.state),icon:json.icon});
+    static fromJSON(json: { action: any; state:any; icon?: string; text?:string }){
+        return new ToggleButton({action:Action.fromJSON(json.action),state:DynamicValue.fromJSON(json.state),icon:json.icon,text:json.text});
     }
 }
