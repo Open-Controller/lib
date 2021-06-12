@@ -1,0 +1,393 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Device | @open-controller/lib</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@open-controller/lib</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="device.html">Device</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container">
+	<div class="row container container-main">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul>
+					<ul class="before-current">
+					</ul>
+					<ul class="current">
+						<li class="current tsd-kind-class">
+							<a href="device.html" class="tsd-kind-icon">Device</a>
+							<ul>
+								<li class=" tsd-kind-constructor tsd-parent-kind-class">
+									<a href="device.html#constructor" class="tsd-kind-icon">constructor</a>
+								</li>
+								<li class=" tsd-kind-property tsd-parent-kind-class">
+									<a href="device.html#actions" class="tsd-kind-icon">actions</a>
+								</li>
+								<li class=" tsd-kind-property tsd-parent-kind-class">
+									<a href="device.html#dynamicvalues" class="tsd-kind-icon">dynamic<wbr>Values</a>
+								</li>
+								<li class=" tsd-kind-property tsd-parent-kind-class">
+									<a href="device.html#name" class="tsd-kind-icon">name</a>
+								</li>
+								<li class=" tsd-kind-method tsd-parent-kind-class">
+									<a href="device.html#getaction" class="tsd-kind-icon">get<wbr>Action</a>
+								</li>
+								<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+									<a href="device.html#getdynamicvalue" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Value</a>
+								</li>
+								<li class=" tsd-kind-method tsd-parent-kind-class">
+									<a href="device.html#run" class="tsd-kind-icon">run</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="after-current">
+					</ul>
+				</ul>
+				<ul>
+					<li>📑 Index</li>
+					<li><br></li>
+					<li class=" ">
+						<a href="../globals.html">Globals</a>
+				</li>                </ul>
+			</nav>
+		</div>
+		<div class="col-9 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment">
+					<div class="lead">
+						<p>Devices are a semantic and the recommended way of organizing <a href="action.html">Action</a>s and <a href="dynamicvalue.html">DynamicValue</a>s.
+						They represent an external device and hold all of the actions and values associated with it.</p>
+					</div>
+					<h4>example</h4>
+					<p><pre><code class="language-typescript"><span class="hljs-keyword">const</span> device = <span class="hljs-keyword">new</span> Device({
+      <span class="hljs-attr">name</span>:<span class="hljs-string">&quot;test&quot;</span>,
+      <span class="hljs-attr">actions</span>:[
+          <span class="hljs-keyword">new</span> HttpAction({
+              <span class="hljs-attr">name</span>:<span class="hljs-string">&quot;on&quot;</span>,
+              <span class="hljs-attr">method</span>:<span class="hljs-string">&quot;GET&quot;</span>,
+              <span class="hljs-attr">base</span>:<span class="hljs-string">&quot;http://device.ip/&quot;</span>,
+              <span class="hljs-attr">path</span>:<span class="hljs-string">&quot;turnOn&quot;</span>
+          })
+      ]
+})
+device.run(<span class="hljs-string">&quot;on&quot;</span>) <span class="hljs-comment">//runs the HttpAction</span>
+device.getAction(<span class="hljs-string">&quot;on&quot;</span>) <span class="hljs-comment">//returns HttpAction {name:&quot;on&quot;, method:&quot;GET&quot;,base:&quot;http://device.ip/&quot;,path:&quot;turnOn&quot;,url:&quot;http://device.ip/turnOn&quot;}</span></code></pre>
+					</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Device</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/actionholder.html" class="tsd-signature-type">ActionHolder</a></li>
+					<li><a href="../interfaces/dynamicvalueholder.html" class="tsd-signature-type">DynamicValueHolder</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<div class="tsd-navigation secondary">
+								<ul>
+									<li class="tsd-kind-constructor tsd-parent-kind-class">
+										<a href="device.html#constructor" class="tsd-kind-icon">constructor</a>
+									</li>
+								</ul>
+							</div>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<div class="tsd-navigation secondary">
+								<ul>
+									<li class="tsd-kind-property tsd-parent-kind-class">
+										<a href="device.html#actions" class="tsd-kind-icon">actions</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tsd-navigation secondary">
+								<ul>
+									<li class="tsd-kind-property tsd-parent-kind-class">
+										<a href="device.html#dynamicvalues" class="tsd-kind-icon">dynamic<wbr>Values</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tsd-navigation secondary">
+								<ul>
+									<li class="tsd-kind-property tsd-parent-kind-class">
+										<a href="device.html#name" class="tsd-kind-icon">name</a>
+									</li>
+								</ul>
+							</div>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<div class="tsd-navigation secondary">
+								<ul>
+									<li class="tsd-kind-method tsd-parent-kind-class">
+										<a href="device.html#getaction" class="tsd-kind-icon">get<wbr>Action</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tsd-navigation secondary">
+								<ul>
+									<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+										<a href="device.html#getdynamicvalue" class="tsd-kind-icon">get<wbr>Dynamic<wbr>Value</a>
+									</li>
+								</ul>
+							</div>
+							<div class="tsd-navigation secondary">
+								<ul>
+									<li class="tsd-kind-method tsd-parent-kind-class">
+										<a href="device.html#run" class="tsd-kind-icon">run</a>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-descriptions">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Device<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="device.html" class="tsd-signature-type">Device</a></li>
+					</ul>
+					<h4 class="tsd-parameters-title">Parameters</h4>
+					<ul class="tsd-parameters">
+						<li>
+							<span class="name">__namedParameters</span>: <span class="tsd-signature-type">object</span>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>actions<span class="tsd-signature-symbol">: </span><a href="action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>dynamic<wbr>Values<span class="tsd-signature-symbol">: </span><a href="dynamicvalue.html" class="tsd-signature-type">DynamicValue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<h4 class="tsd-returns-title">Returns <a href="device.html" class="tsd-signature-type">Device</a></h4>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Open-Controller/lib/blob/f7f1300/src/Holders/Device.ts#L30">Holders/Device.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-descriptions">
+					<a name="actions" class="tsd-anchor"></a>
+					<h3>actions</h3>
+					<div class="tsd-signature tsd-kind-icon">actions<span class="tsd-signature-symbol">:</span> <a href="action.html" class="tsd-signature-type">Action</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/actionholder.html">ActionHolder</a>.<a href="../interfaces/actionholder.html#actions">actions</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Open-Controller/lib/blob/f7f1300/src/Holders/Device.ts#L29">Holders/Device.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-descriptions">
+					<a name="dynamicvalues" class="tsd-anchor"></a>
+					<h3>dynamic<wbr>Values</h3>
+					<div class="tsd-signature tsd-kind-icon">dynamicValues<span class="tsd-signature-symbol">:</span> <a href="dynamicvalue.html" class="tsd-signature-type">DynamicValue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/dynamicvalueholder.html">DynamicValueHolder</a>.<a href="../interfaces/dynamicvalueholder.html#dynamicvalues">dynamicValues</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Open-Controller/lib/blob/f7f1300/src/Holders/Device.ts#L30">Holders/Device.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-descriptions">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Open-Controller/lib/blob/f7f1300/src/Holders/Device.ts#L28">Holders/Device.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-descriptions">
+					<a name="getaction" class="tsd-anchor"></a>
+					<h3>get<wbr>Action</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Action<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="action.html" class="tsd-signature-type">Action</a></li>
+					</ul>
+					<h4 class="tsd-parameters-title">Parameters</h4>
+					<ul class="tsd-parameters">
+						<li>
+							<span class="name">name</span>: <span class="tsd-signature-type">string</span>
+						</li>
+					</ul>
+					<h4 class="tsd-returns-title">Returns <a href="action.html" class="tsd-signature-type">Action</a></h4>
+					</ul>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/actionholder.html">ActionHolder</a>.<a href="../interfaces/actionholder.html#getaction">getAction</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Open-Controller/lib/blob/f7f1300/src/Holders/Device.ts#L39">Holders/Device.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-descriptions">
+					<a name="getdynamicvalue" class="tsd-anchor"></a>
+					<h3>get<wbr>Dynamic<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Dynamic<wbr>Value&lt;T&gt;<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="dynamicvalue.html" class="tsd-signature-type">DynamicValue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">T</span>                    </li>
+					</ul>
+					<h4 class="tsd-parameters-title">Parameters</h4>
+					<ul class="tsd-parameters">
+						<li>
+							<span class="name">name</span>: <span class="tsd-signature-type">string</span>
+						</li>
+					</ul>
+					<h4 class="tsd-returns-title">Returns <a href="dynamicvalue.html" class="tsd-signature-type">DynamicValue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</ul>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/dynamicvalueholder.html">DynamicValueHolder</a>.<a href="../interfaces/dynamicvalueholder.html#getdynamicvalue">getDynamicValue</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Open-Controller/lib/blob/f7f1300/src/Holders/Device.ts#L42">Holders/Device.ts:42</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-descriptions">
+					<a name="run" class="tsd-anchor"></a>
+					<h3>run</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/actionsuccess.html" class="tsd-signature-type">ActionSuccess</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<h4 class="tsd-parameters-title">Parameters</h4>
+					<ul class="tsd-parameters">
+						<li>
+							<span class="name">action</span>: <span class="tsd-signature-type">string</span>
+						</li>
+					</ul>
+					<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/actionsuccess.html" class="tsd-signature-type">ActionSuccess</a><span class="tsd-signature-symbol">&gt;</span>    </h4>
+					</ul>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/actionholder.html">ActionHolder</a>.<a href="../interfaces/actionholder.html#run">run</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/Open-Controller/lib/blob/f7f1300/src/Holders/Device.ts#L36">Holders/Device.ts:36</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<footer class="with-border-bottom">
+				<div class="tsd-legend-group">
+					<ul class="tsd-legend">
+						<li class="tsd-is-inherited"><span class="tsd-kind-icon">Inherited</span></li>
+						<li class="tsd-is-protected"><span class="tsd-kind-icon">Protected</span></li>
+						<li class="tsd-is-private"><span class="tsd-kind-icon">Private</span></li>
+						<li class="tsd-is-static"><span class="tsd-kind-icon">Static</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+						<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object</span></li>
+						<li class="tsd-kind-property"><span class="tsd-kind-icon">Property</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+						<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+						<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type</span></li>
+						<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+						<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enum</span></li>
+						<li class="tsd-kind-constructor"><span class="tsd-kind-icon">Constructor</span></li>
+						<li class="tsd-kind-accessor"><span class="tsd-kind-icon">Getter/Setter</span></li>
+					</ul>
+				</div>
+			</footer>
+			<div>Made with ❤️ by <a href="https://github.com/pirix-gh/eledoc" target="_blank">pirix-gh</a>. Documentation generated by <a href="http://typedoc.org/" target="_blank">TypeDoc.</a></div>
+		</div>
+	</div>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
